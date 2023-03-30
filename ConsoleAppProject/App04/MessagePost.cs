@@ -18,15 +18,7 @@ namespace ConsoleAppProject.App04
         // an arbitrarily long, multi-line message
         public String Message { get; }
 
-        /// <summary>
-        /// Constructor for objects of class MessagePost.
-        /// </summary>
-        /// <param name="author">
-        /// The username of the author of this post.
-        /// </param>
-        /// <param name="text">
-        /// The text of this post.
-        /// </param>
+       
         public MessagePost(String text)
         {
            
@@ -35,17 +27,7 @@ namespace ConsoleAppProject.App04
         }
 
        
-        ///
-        ///<summary>
-        /// Add a comment to this post.
-        /// </summary>
-        /// <param name="text">
-        /// The new comment to add.
-        /// </param>        
-        public void AddComment(String text)
-        {
-            comments.Add(text);
-        }
+      
 
         ///
         ///<summary>
