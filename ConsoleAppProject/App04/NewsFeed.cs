@@ -23,10 +23,7 @@ namespace ConsoleAppProject.App04
         private readonly List<MessagePost> messages;
         private readonly List<PhotoPost> photos;
 
-        public void Run()
-        {
-
-        }
+       
         ///<summary>
         /// Construct an empty news feed.
         ///</summary>
