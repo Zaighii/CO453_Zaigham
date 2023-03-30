@@ -25,8 +25,8 @@ namespace ConsoleAppProject
             Console.WriteLine(" =================================================");
             Console.WriteLine();
 
-            DistanceConverter converter = new DistanceConverter();
-            converter.run();
+            Post posts = new Post();
+            posts.run();
         }
     }
 }
