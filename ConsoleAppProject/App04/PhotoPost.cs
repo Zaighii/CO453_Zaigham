@@ -13,8 +13,9 @@ namespace ConsoleAppProject.App04
     /// Michael Kölling and David J. Barnes
     /// @version 0.1
     /// </author>
-    public class PhotoPost
+    public class PhotoPost : post
     {
+
 
 
         // the name of the image file
@@ -22,6 +23,8 @@ namespace ConsoleAppProject.App04
 
         // a one line image caption
         public String Caption { get; set; }
+
+
 
 
         ///<summary>
@@ -36,28 +39,24 @@ namespace ConsoleAppProject.App04
         /// <param name="filename">
         /// The filename of the image in this post.
         /// </param>
-        public PhotoPost(String author, String filename, String caption)
+        public PhotoPost(String author, String filename, String caption) : base(author)
         {
 
             this.Filename = filename;
             this.Caption = caption;
 
-
-
         }
 
-        protected void Display()
+
+
+
+        public override void Display()
         {
-            Console.WriteLine();
-
-            Console.WriteLine($"    Filename: [{Filename}]");
-            Console.WriteLine($"    Caption: {Caption}");
-
-            Console.WriteLine();
-
-
+            Console.WriteLine($"  FileName:[{Filename}]");
+            Console.WriteLine($"  Caption:{Caption}");
+            base.Display();
         }
-    }
-}
 
+
+    }
 }

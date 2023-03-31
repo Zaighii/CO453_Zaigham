@@ -1,5 +1,6 @@
 using ConsoleAppProject.App01;
 using ConsoleAppProject.App03;
+using ConsoleAppProject.App04;
 using ConsoleAppProject.Helpers;
 using System;
 
@@ -25,8 +26,8 @@ namespace ConsoleAppProject
             Console.WriteLine(" =================================================");
             Console.WriteLine();
 
-            Post posts = new Post();
-            posts.run();
+            Network conversion = new Network();
+            conversion.DispalyMenu();
         }
     }
 }

@@ -1,36 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ConsoleAppProject.App04
 {
-    class Post
+    public class post
     {
-        // username of the post's author
-        public String Username { get; set; }
-        public DateTime Timestamp { get; }
 
-        private int likes;
+        public int likes;
 
         private readonly List<String> comments;
 
-        public Post(String author)
-        {
-            Username = author;
-            Timestamp = DateTime.Now;
 
+        // username of the post's author
+        public String Username { get; }
+
+        public DateTime Timestamp { get; }
+
+        public post(string author)
+        {
+
+            this.Username = author;
+            Timestamp = DateTime.Now;
             likes = 0;
             comments = new List<String>();
         }
-        ///<summary>
+        /// <summary>
         /// Record one more 'Like' indication from a user.
-        ///</summary>
+        /// </summary>
         public void Like()
         {
             likes++;
         }
 
-        ///code
         ///<summary>
         /// Record that a user has withdrawn his/her 'Like' vote.
         ///</summary>
@@ -40,27 +41,33 @@ namespace ConsoleAppProject.App04
             {
                 likes--;
             }
-        } ///<summary>
-          /// Add a comment to this post.
-          ///</summary>
-          /// <param name="text">
-          /// The new comment to add.
-          /// </param>
+        }
+
+        ///<summary>
+        /// Add a comment to this post.
+        /// </summary>
+
+        /// The new comment to add.
+        /// </param>        
         public void AddComment(String text)
         {
             comments.Add(text);
         }
 
-        public void Display()
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual void Display()
         {
             Console.WriteLine();
             Console.WriteLine($"    Author: {Username}");
+
             Console.WriteLine($"    Time Elpased: {FormatElapsedTime(Timestamp)}");
             Console.WriteLine();
 
             if (likes > 0)
             {
-                Console.WriteLine($"    Likes: -  {likes}  people like this.");
+                Console.WriteLine($"    Likes:  {likes}  people like this.");
             }
             else
             {
@@ -73,20 +80,20 @@ namespace ConsoleAppProject.App04
             }
             else
             {
-                Console.WriteLine($"    Comment(s): {comments.Count}  Click here to view.");
+                Console.WriteLine($"    {comments.Count}  comment(s). Click here to view.");
             }
         }
-        /// <summary>
+        ///<summary>
         /// Create a string describing a time point in the past in terms 
         /// relative to current time, such as "30 seconds ago" or "7 minutes ago".
         /// Currently, only seconds and minutes are used for the string.
         /// </summary>
         /// <param name="time">
-        /// The time value to convert (in system milliseconds)
+        ///  The time value to convert (in system milliseconds)
         /// </param> 
         /// <returns>
         /// A relative time string for the given time
-        /// </returns>  
+        /// </returns>      
         private String FormatElapsedTime(DateTime time)
         {
             DateTime current = DateTime.Now;
@@ -104,6 +111,7 @@ namespace ConsoleAppProject.App04
                 return seconds + " seconds ago";
             }
         }
+
 
     }
 }
