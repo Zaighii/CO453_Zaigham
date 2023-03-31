@@ -23,6 +23,7 @@ namespace ConsoleAppProject.App04
 
         // a one line image caption
         public String Caption { get; set; }
+        public string V { get; }
 
 
 
@@ -47,8 +48,10 @@ namespace ConsoleAppProject.App04
 
         }
 
-
-
+        public PhotoPost(string author, string v) : base(author)
+        {
+            V = v;
+        }
 
         public override void Display()
         {
